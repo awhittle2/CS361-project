@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 361 - Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- Nav bar -->
+    <!-- Uses bootstrap -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="encryption.html">Encryption</a>
+                    <a class="nav-link" href="decryption.html">Decryption</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+    <br>
+
+    <!-- Title -->
+    <h1 style="text-align: center;">Rail Fence Decryption Page</h1>
+    
+    <br>
+
+    <!-- Directions -->
+    <h3>How to Use This Page</h3>
+
+    <br>
+
+    <p>Welcome to the Rail Fence Decryption page. The navigation bar at the top is your gateway to the site: 'Home' returns you to the main page, while 'Encryption' and 'Decryption' lead to specialized sections, where you can find other encryption and decryption schemes. Right below this, you'll find the 'Overview of Rail Fence' section, featuring an engaging accordion menu. This interactive tool answers pivotal questions like 'What is Rail Fence?', 'How do you decrypt Rail Fence?', and 'What are some resources to learn more?', complete with links to further reading. Dive into each topic by clicking on the questions to expand and access detailed information. Moving down, the Rail Fence Decryptor section awaits. Here, a text area labeled "Encrypted Text" is set up for you to enter any text you wish to convert from Rail Fence. Additionally, there is a dropdown menu directly below this, which allows you to select the number of rails you wish to use with your text. By default, this option is set to 2. Click 'Decrypt' to transform your text from Rail Fence, displayed in the "Plain Text" box beneath. Finally, at the bottom, the 'Copy Text' button concludes the page's functionality. 'Copy Text' conveniently saves the plain text text to your clipboard.</p>
+
+    <!-- Local storage note -->
+    <br>
+
+    <p>
+        <strong>Important Notice Regarding Text Encryption</strong> Any text you choose to encrypt using our service will be stored in your browser's local storage along with associated metadata, including the timestamp of encryption and encryption details such as passwords or the number of rails, depending on the encryption method. This information is stored to enhance user experience and provide seamless service, ensuring your data is kept locally on your device and not on external servers.<br>
+        To find the local storage in your browser, you can generally follow these steps:<br>
+    </p>
+    
+    <ol>
+        <li><strong>Open the Developer Tools:</strong> In browsers like Google Chrome, Firefox, or Microsoft Edge, you can access this by right-clicking on the page and selecting "Inspect" or pressing <kbd>Ctrl+Shift+I</kbd> (or <kbd>Cmd+Opt+I</kbd> on Mac).</li>
+        <li><strong>Navigate to the Application Tab:</strong> In the developer tools, look for a tab labeled "Application" (in Chrome and Edge) or "Storage" (in Firefox).</li>
+        <li><strong>Locate the Local Storage Section:</strong> Find the "Local Storage" section in the Application or Storage tab and click on it to expand.</li>
+        <li><strong>View and Manage Data:</strong> Here, you can view, modify, or delete data stored by websites in your browser's local storage.</li>
+    </ol>
+
+    <p>Remember, the exact steps might vary slightly based on the browser you're using.</p>
+
+    <br>
+
+    <!-- Overview section -->
+    <h3>Overview of Rail Fence</h3>
+
+    <br>
+    
+    <!-- Accordion 1 -->
+    <!-- Uses bootstrap -->
+    <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            What is Rail Fence?
+        </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>The Rail Fence cipher is a form of transposition cipher that rearranges the letters of a plaintext message to create a new message (ciphertext). It's called "Rail Fence" because its structure resembles the rails of a fence when the text is written diagonally in a zigzag pattern across multiple "rails" (lines). It's a simple form of encryption that offers basic security and is easily understood and implemented.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            How do you decrypt Rail Fence?
+        </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>Decrypting a message encrypted with the Rail Fence cipher requires knowing the number of rails (lines) used in the encryption process. The decryption process reconstructs the original pattern used to encrypt the message. This involves calculating the number of characters in each rail and then reconstructing the zigzag pattern by placing the characters back into their original positions. Once the pattern is reconstructed, the message can be read off in the original zigzag manner. The process can be somewhat tedious without automation, especially for messages with a large number of rails or a long length.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What are some resources to learn more?
+        </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>
+            1. <a href="https://en.wikipedia.org/wiki/Rail_fence_cipher"></a>en.wikipedia.org<br>
+            2. <a href="https://www.baeldung.com/cs/cryptography-rail-fence-cipher">baeldung.com</a><br>
+            3. <a href="https://cryptii.com/pipes/rail-fence-cipher"></a>cryptii.com<br>
+            4. <a href="https://crypto.interactive-maths.com/rail-fence-cipher.html"></a>crypto.interactive-maths.com<br>
+            5. <a href="https://www.101computing.net/the-rail-fence-cipher/">101computing.net</a>
+            </p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <br>
+    <br>
+
+    <!-- Decoder section -->
+    <h3>Rail Fence Decryptor</h3>
+
+    <br>
+
+    <!-- Input Textarea -->
+    <div class="form-floating">
+        <textarea class="form-control" style="height: 250px;" placeholder="This is where the encrypted text will go" id="railfenceInputTextarea"></textarea>
+        <label for="railfenceInputTextarea">Encrypted Text</label>
+    </div>
+
+    <br>
+
+    <!-- Rails Dropdown -->
+    <label for="railsSelect">Number of Rails</label>
+    <select id="railsSelect" class="form-select">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select>
+
+    <br>
+
+    <!-- Decode button -->
+    <button type="button" id="railfenceDecodeButton" class="btn btn-outline-secondary">Decrypt</button>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- Output Textarea -->
+    <div class="form-floating">
+        <textarea class="form-control" style="height: 250px;" placeholder="This is where the plain text will go" id="railfenceOutputTextarea" disabled></textarea>
+        <label for="railfenceOutputTextarea">Plain Text</label>
+    </div>
+
+    <br>
+
+    <!-- Copy button -->
+    <button type="button" id="railfenceCopyButton" class="btn btn-outline-secondary">Copy Text</button>
+        
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+
+    <!-- Bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- My script -->
+    <script>
+        // Variables that match to various DOM elements
+        const decodeButton = document.getElementById('railfenceDecodeButton')
+        const copyButton = document.getElementById('railfenceCopyButton')
+        const numRails = document.getElementById('railsSelect')
+        const inputText = document.getElementById('railfenceInputTextarea')
+        const outputText = document.getElementById('railfenceOutputTextarea')
+
+        // Function to load encoded text and num rails into the input textarea and railsSelect
+        document.addEventListener('DOMContentLoaded', function() {
+            // Grab variables from local storage
+            var encodedText = localStorage.getItem('encodedText')
+            var rails = localStorage.getItem('rails')
+
+            // If they are not empty, set the input text and num rails values
+            if(encodedText && rails) {
+                inputText.value = encodedText
+                numRails.value = rails
+            }
+
+            // Remove the variables from local storage
+            localStorage.removeItem('encodedText')
+            localStorage.removeItem('rails')
+        })
+
+        // Function to decode the text
+        decodeButton.addEventListener('click', function() {
+            var encodedText = inputText.value
+            var numOfRails = parseInt(numRails.value, 10)
+
+            // If the encoded text is empty
+            if(encodedText.trim() === '') {
+                // Send an alert and exit
+                alert('Encoded Text cannot be empty!')
+                return
+            }
+
+            var decodedText = decodeRailFenceCipher(encodedText, numOfRails) // Calls helper function
+
+            // Set the output text to the decoded text variable
+            outputText.value = decodedText
+            console.log("Updated Decoded Textarea")
+        })
+
+        // Helper function to decode the text
+        function decodeRailFenceCipher(text, numOfRails) {
+            let rails = Array.from({ length: numOfRails }, () => []); // Initialize an array for each rail
+            
+            // Start at first rail and move down
+            let railIndex = 0
+            let direction = 1
+
+            // For each character, add it to the current rail
+            for (let char of text) {
+                rails[railIndex].push(char)
+
+                // Move to next rail
+                railIndex += direction
+
+                // Change direction at top/bottom rail
+                if (railIndex === 0 || railIndex === numOfRails - 1) {
+                    direction *= -1
+                }
+            }
+
+            let decodedArray = new Array(text.length) // Create an array for the decoded text
+            let idx = 0 // Index of original text
+
+            // Iterate over each rail and each indice within the rail
+            for (let rail of rails) {
+                for (let i of rail) {
+                    decodedArray[i] = text[idx++] // Assign characters to their original positions
+                }
+            }
+
+            return decodedArray.join('')
+        }
+
+        // Function to copy text to the clipboard
+        copyButton.addEventListener('click', function() {
+            // Copy to clipboard and change the name of the button to "Copied" for 1 second
+            navigator.clipboard.writeText(outputText.value)
+            .then(() => {
+                copyButton.textContent = 'Copied!'
+                setTimeout(() => {
+                    copyButton.textContent = 'Copy'
+                }, 1000)
+            })
+            // If there's an error, print it to the console
+            .catch(err => {
+                console.error('Error in copying text: ', err)
+            })
+        })
+    </script>
+</body>
+</html>

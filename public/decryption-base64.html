@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 361 - Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- Nav bar -->
+    <!-- Uses bootstrap -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="encryption.html">Encryption</a>
+                    <a class="nav-link" href="decryption.html">Decryption</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+    
+    <br>
+
+    <!-- Title -->
+    <h1 style="text-align: center;">Base64 Decoding Page</h1>
+    
+    <br>
+
+    <!-- Directions -->
+    <h3>How to Use This Page</h3>
+
+    <br>
+
+    <p>Welcome to the Base64 Decoding page. The navigation bar at the top is your gateway to the site: 'Home' returns you to the main page, while 'Encryption' and 'Decryption' lead to specialized sections, where you can find other encryption and decryption schemes. Right below this, you'll find the 'Overview of Base64' section, featuring an engaging accordion menu. This interactive tool answers pivotal questions like 'What is Base64?', 'How do you decode Base64?', 'What is the difference between encryption and encoding?', and 'What are some resources to learn more?', complete with links to further reading. Dive into each topic by clicking on the questions to expand and access detailed information. Moving down, the Base64 Decoder section awaits. Here, a text area labeled "Encoded Text" is set up for you to enter any text you wish to convert from Base64. Click 'Decode' to transform your text from Base64, displayed in the "Plain Text" box beneath. Finally, at the bottom, the 'Copy Text' button concludes the page's functionality. 'Copy Text' conveniently saves the plain text text to your clipboard.</p>
+
+    <!-- Local storage note -->
+    <br>
+
+    <p>
+        <strong>Important Notice Regarding Text Encryption</strong> Any text you choose to encrypt using our service will be stored in your browser's local storage along with associated metadata, including the timestamp of encryption and encryption details such as passwords or the number of rails, depending on the encryption method. This information is stored to enhance user experience and provide seamless service, ensuring your data is kept locally on your device and not on external servers.<br>
+        To find the local storage in your browser, you can generally follow these steps:<br>
+    </p>
+    
+    <ol>
+        <li><strong>Open the Developer Tools:</strong> In browsers like Google Chrome, Firefox, or Microsoft Edge, you can access this by right-clicking on the page and selecting "Inspect" or pressing <kbd>Ctrl+Shift+I</kbd> (or <kbd>Cmd+Opt+I</kbd> on Mac).</li>
+        <li><strong>Navigate to the Application Tab:</strong> In the developer tools, look for a tab labeled "Application" (in Chrome and Edge) or "Storage" (in Firefox).</li>
+        <li><strong>Locate the Local Storage Section:</strong> Find the "Local Storage" section in the Application or Storage tab and click on it to expand.</li>
+        <li><strong>View and Manage Data:</strong> Here, you can view, modify, or delete data stored by websites in your browser's local storage.</li>
+    </ol>
+
+    <p>Remember, the exact steps might vary slightly based on the browser you're using.</p>
+
+    <br>
+
+    <!-- Overview section -->
+    <h3>Overview of Base64</h3>
+
+    <br>
+    
+    <!-- Accordion 1 -->
+    <!-- Uses bootstrap -->
+    <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            What is Base64?
+        </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>Base64 is a method for encoding binary data into a string of ASCII characters, making it more suitable for transmission over mediums that only reliably support text. It's often used in data transfer protocols, including embedding image data within HTML or CSS files. The encoding process involves converting binary data into a set of 64 printable characters from the ASCII standard. These 64 characters include uppercase and lowercase letters (A-Z, a-z), digits (0-9), plus (+), and slash (/). The equal sign (=) is used as a padding character.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            How do you decode Base64?
+        </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>Decoding Base64 is essentially the reverse process of encoding. The encoded string is divided into groups of four characters, and each group is then converted back into its original three bytes (or fewer, if padding characters '=' were added during encoding). Each character in the Base64 encoded string represents a different 6-bit value, which maps back to the original binary format. The binary data is then grouped back into 8-bit bytes to reconstruct the original data. The process requires a mapping table that correlates each Base64 character to its corresponding value. This method is widely used because it restores the original data exactly, even if it includes non-text binary data like images or audio files.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What is the difference between encryption and encoding?
+        </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>Encryption and encoding are two different methods for altering data, but with distinct purposes. Encryption is designed for securing data, making it unreadable to unauthorized users. It requires a key for both encryption and decryption, ensuring that only authorized parties can access the original data. Encoding, on the other hand, is not about security but about data representation or transformation. It converts data into another format using a scheme that is openly available and reversible (like Base64 encoding), often for compatibility or transmission purposes.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            What are some resources to learn more?
+        </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>
+            1. <a href="https://www.base64decode.org/" >base64Decode.org</a><br>
+            2. <a href="https://developer.mozilla.org/en-US/docs/Glossary/Base64"></a>developer.mozilla.org<br>
+            3. <a href="https://en.wikipedia.org/wiki/Base64"></a>en.wikipedia.org
+            </p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <br>
+    <br>
+
+    <!-- Decoder section -->
+    <h3>Base64 Decoder</h3>
+
+    <br>
+
+    <!-- Input Textarea -->
+    <div class="form-floating">
+        <textarea class="form-control" style="height: 250px;" placeholder="This is where the encoded text will go" id="base64InputTextarea"></textarea>
+        <label for="base64InputTextarea">Encoded Text</label>
+    </div>
+
+    <br>
+
+    <!-- Decode button -->
+    <button type="button" id="base64DecodeButton" class="btn btn-outline-secondary">Decode</button>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- Output Textarea -->
+    <div class="form-floating">
+        <textarea class="form-control" style="height: 250px;" placeholder="This is where the plain text will go" id="base64OutputTextarea" disabled></textarea>
+        <label for="base64OutputTextarea">Plain Text</label>
+    </div>
+
+    <br>
+
+    <!-- Copy button -->
+    <button type="button" id="base64CopyButton" class="btn btn-outline-secondary">Copy Text</button>
+        
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+
+    <!-- Bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- My script -->
+    <script>
+        // Variables that match to various DOM elements
+        const decodeButton = document.getElementById('base64DecodeButton')
+        const copyButton = document.getElementById('base64CopyButton')
+        const inputText = document.getElementById('base64InputTextarea')
+        const outputText = document.getElementById('base64OutputTextarea')
+
+        // Function to load encoded text into the input textarea
+        document.addEventListener('DOMContentLoaded', function() {
+            // Grab the variable from local storage
+            var encodedText = localStorage.getItem('encodedText')
+
+            // If its not empty, set the input text to its value
+            if(encodedText) {
+                inputText.value = encodedText
+            }
+
+            // Remove the varaible from local storage
+            localStorage.removeItem('encodedText')
+        })
+
+        // Function to decode the text
+        decodeButton.addEventListener('click', function() {
+            var encodedText = inputText.value
+
+            // If the encoded text is empty
+            if(encodedText.trim() === '') {
+                // Send an alert and exit
+                alert('Encoded Text cannot be empty!')
+                return
+            }
+
+            var decodedText = atob(encodedText) // atob() changes from base64 to plain text
+
+            // Set the output text to the decoded text variable
+            outputText.value = decodedText
+            console.log("Updated Decoded Textarea")
+        })
+
+        // Function to copy text to the clipboard
+        copyButton.addEventListener('click', function() {
+            // Copy to clipboard and change the name of the button to "Copied" for 1 second
+            navigator.clipboard.writeText(outputText.value)
+            .then(() => {
+                copyButton.textContent = 'Copied!'
+                setTimeout(() => {
+                    copyButton.textContent = 'Copy'
+                }, 1000)
+            })
+            // If there's an error, print it to the console
+            .catch(err => {
+                console.error('Error in copying text: ', err)
+            })
+        })
+    </script>
+</body>
+</html>

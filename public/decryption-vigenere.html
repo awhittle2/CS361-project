@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 361 - Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- Nav bar -->
+    <!-- Uses bootstrap -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="encryption.html">Encryption</a>
+                    <a class="nav-link" href="decryption.html">Decryption</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+    <br>
+
+    <!-- Title -->
+    <h1 style="text-align: center;">Vigenere Decryption Page</h1>
+    
+    <br>
+
+    <!-- Directions -->
+    <h3>How to Use This Page</h3>
+
+    <br>
+
+    <p>Welcome to the Vigenere Decryption page. The navigation bar at the top is your gateway to the site: 'Home' returns you to the main page, while 'Encryption' and 'Decryption' lead to specialized sections, where you can find other encryption and decryption schemes. Right below this, you'll find the 'Overview of Vigenere' section, featuring an engaging accordion menu. This interactive tool answers pivotal questions like 'What is Vigenere?', 'How do you decrypt Vigenere?', and 'What are some resources to learn more?', complete with links to further reading. Dive into each topic by clicking on the questions to expand and access detailed information. Moving down, the Vigenere Decryptor section awaits. Here, a text area labeled "Encrypted Text" is set up for you to enter any text you wish to convert from Vigenere. Additionally, there is a text area labeled "Password" directly below, where you are required to entire in a unique password. Click 'Decrypt' to transform your text from Vigenere, displayed in the "Plain Text" box beneath. Finally, at the bottom, the 'Copy Text' button concludes the page's functionality. 'Copy Text' conveniently saves the plain text text to your clipboard.</p>
+
+    <!-- Local storage note -->
+    <br>
+
+    <p>
+        <strong>Important Notice Regarding Text Encryption</strong> Any text you choose to encrypt using our service will be stored in your browser's local storage along with associated metadata, including the timestamp of encryption and encryption details such as passwords or the number of rails, depending on the encryption method. This information is stored to enhance user experience and provide seamless service, ensuring your data is kept locally on your device and not on external servers.<br>
+        To find the local storage in your browser, you can generally follow these steps:<br>
+    </p>
+    
+    <ol>
+        <li><strong>Open the Developer Tools:</strong> In browsers like Google Chrome, Firefox, or Microsoft Edge, you can access this by right-clicking on the page and selecting "Inspect" or pressing <kbd>Ctrl+Shift+I</kbd> (or <kbd>Cmd+Opt+I</kbd> on Mac).</li>
+        <li><strong>Navigate to the Application Tab:</strong> In the developer tools, look for a tab labeled "Application" (in Chrome and Edge) or "Storage" (in Firefox).</li>
+        <li><strong>Locate the Local Storage Section:</strong> Find the "Local Storage" section in the Application or Storage tab and click on it to expand.</li>
+        <li><strong>View and Manage Data:</strong> Here, you can view, modify, or delete data stored by websites in your browser's local storage.</li>
+    </ol>
+
+    <p>Remember, the exact steps might vary slightly based on the browser you're using.</p>
+
+    <br>
+
+    <!-- Overview section -->
+    <h3>Overview of Vigenere</h3>
+
+    <br>
+    
+    <!-- Accordion 1 -->
+    <!-- Uses bootstrap -->
+    <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            What is Vigenere?
+        </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>The Vigenère cipher is a method of encrypting alphabetic text through a simple form of polyalphabetic substitution. It uses a keyword, where each letter of the keyword refers to a different Caesar cipher (shift). The strength of the Vigenère cipher comes from its use of multiple different Caesar ciphers in the encryption process, making it more secure than a simple Caesar shift cipher.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            How do you decrypt Vigenere?
+        </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>Decrypting a message encrypted with the Vigenère cipher requires knowing the keyword used for encryption. To decrypt, you reverse the process used for encryption. Each letter in the ciphertext is shifted backward in the alphabet by the number of positions as indicated by the corresponding letter in the keyword. If the keyword is shorter than the message, it is repeated as necessary. For example, if the keyword is "KEY" and the ciphertext is "RIJVS", the first letter R is shifted backward by the alphabet position of K (the first letter of the keyword), the second letter I is shifted backward by the position of E (the second letter of the keyword), and so on. This process restores the original plaintext message.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What are some resources to learn more?
+        </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>
+            1. <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">en.wikipedia.org</a><br>
+            2. <a href="https://cryptii.com/pipes/vigenere-cipher">cryptii.com</a><br>
+            3. <a href="https://eric.mann.blog/basic-cryptography-the-vigenere-cipher/">eric.mann.blog</a>
+            </p>
+        </div>
+        </div>
+    </div>
+    </div>
+    
+    <br>
+    <br>
+
+    <!-- Decoder section -->
+    <h3>Vigenere Decryptor</h3>
+
+    <br>
+
+    <!-- Input Textarea -->
+    <div class="form-floating">
+        <textarea class="form-control" style="height: 250px;" placeholder="This is where the encrypted text will go" id="vigenereInputTextarea"></textarea>
+        <label for="vigenereInputTextarea">Encrypted Text</label>
+    </div>
+
+    <!-- Input Textarea - Password -->
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="This is where the password will go" id="vigenerePasswordInput"></textarea>
+        <label for="vigenerePasswordInput">Password</label>
+    </div>
+
+    <br>
+
+    <!-- Decode button -->
+    <button type="button" id="vigenereDecodeButton" class="btn btn-outline-secondary">Decrypt</button>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- Output Textarea -->
+    <div class="form-floating">
+        <textarea class="form-control" style="height: 250px;" placeholder="This is where the plain text will go" id="vigenereOutputTextarea" disabled></textarea>
+        <label for="vigenereOutputTextarea">Plain Text</label>
+    </div>
+
+    <br>
+
+    <!-- Copy button -->
+    <button type="button" id="vigenereCopyButton" class="btn btn-outline-secondary">Copy Text</button>
+        
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+
+    <!-- Bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- My script -->
+    <script>
+        // Variables that match to various DOM elements
+        const decodeButton = document.getElementById('vigenereDecodeButton')
+        const copyButton = document.getElementById('vigenereCopyButton')
+        const password = document.getElementById('vigenerePasswordInput')
+        const inputText = document.getElementById('vigenereInputTextarea')
+        const outputText = document.getElementById('vigenereOutputTextarea')
+
+        // Function to load encoded text into the input textarea
+        document.addEventListener('DOMContentLoaded', function() {
+            // Grab the variables from local storage
+            var encodedText = localStorage.getItem('encodedText')
+            var pass = localStorage.getItem('password')
+
+            // If they are not empty, set the input text and password to their values
+            if(encodedText) {
+                inputText.value = encodedText
+                password.value = pass
+            }
+
+            // Remove the variables from local storage
+            localStorage.removeItem('encodedText')
+            localStorage.removeItem('password')
+        })
+
+        // Function to decode the text
+        decodeButton.addEventListener('click', function() {
+            var encodedText = inputText.value
+            var pass = password.value
+
+            // If the encoded text is empty
+            if(encodedText.trim() === '') {
+                // Send an alert and exit
+                alert('Encoded Text cannot be empty!')
+                return
+            }
+
+            // If the password is empty
+            if (pass.trim() === '') {
+                // Send an alert and exit
+                alert('Password cannot be empty!')
+                return
+            }
+
+            var decodedText = decodeVigenereCipher(encodedText, pass) // Calls the helper function
+            
+            // Set the output text to the decoded text variable
+            outputText.value = decodedText
+            console.log("Updated Decoded Textarea")
+        })
+
+        // Helper function to decode the text
+        function decodeVigenereCipher(text, password) {
+            const aCharCode = 'A'.charCodeAt(0) // Contains the ACII value of A
+            let decoded = '';
+            password = password.toUpperCase().replace(/[^A-Z]/g, '') // Makes sure password is uppercase letters only
+
+            // Iterate over the text; i = encoded, j = password
+            for (let i = 0, j = 0; i < text.length; i++) {
+                const currentChar = text[i]
+
+                // Determines the bounds of the upper and lower case letters
+                const isUpperCaseChar = currentChar >= 'A' && currentChar <= 'Z'
+                const isLowerCaseChar = currentChar >= 'a' && currentChar <= 'z'
+
+                // Check if the current letter is an upper or lower case letter
+                if (isUpperCaseChar || isLowerCaseChar) {
+                    const charCodeBase = isUpperCaseChar ? 'A'.charCodeAt(0) : 'a'.charCodeAt(0)
+
+                    // Calculate the offset for encoding using the Vigenere Cipher (minus password character that was calculated)
+                    const offset = (currentChar.charCodeAt(0) - charCodeBase - (password[j % password.length].charCodeAt(0) - aCharCode) + 26) % 26
+                    
+                    // Add to teh result and move to teh next character in the password
+                    decoded += String.fromCharCode(offset + charCodeBase)
+                    j++
+                // If the current character is not a letter, add it to the result as is
+                } else {
+                    decoded += currentChar
+                }
+            }
+
+            return decoded
+        }
+
+        // Function to copy text to the clipboard
+        copyButton.addEventListener('click', function() {
+            // Copy to clipboard and change the name of the button to "Copied" for 1 second
+            navigator.clipboard.writeText(outputText.value)
+            .then(() => {
+                copyButton.textContent = 'Copied!'
+                setTimeout(() => {
+                    copyButton.textContent = 'Copy'
+                }, 1000)
+            })
+            // If there's an error, print it to the console
+            .catch(err => {
+                console.error('Error in copying text: ', err)
+            })
+        })
+    </script>
+</body>
+</html>

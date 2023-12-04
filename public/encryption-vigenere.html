@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 361 - Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- Nav bar -->
+    <!-- Uses bootstrap -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="encryption.html">Encryption</a>
+                    <a class="nav-link" href="decryption.html">Decryption</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+    <br>
+
+    <!-- Title -->
+    <h1 style="text-align: center;">Vigenere Encryption Page</h1>
+    
+    <br>
+
+    <!-- Directions -->
+    <h3>How to Use This Page</h3>
+
+    <br>
+
+    <p>Welcome to the Vigenere Encryption page. The navigation bar at the top is your gateway to the site: 'Home' returns you to the main page, while 'Encryption' and 'Decryption' lead to specialized sections, where you can find other encryption and decryption schemes. Right below this, you'll find the 'Overview of Vigenere' section, featuring an engaging accordion menu. This interactive tool answers pivotal questions like 'What is Vigenere?', 'How do you encrypt in Vigenere?', and 'What are some resources to learn more?', complete with links to further reading. Dive into each topic by clicking on the questions to expand and access detailed information. Moving down, the Vigenere Encryptor section awaits. Here, a text area labeled "Plain Text" is set up for you to enter any text you wish to convert into an encrypted Vigenere message. Additionally, there is a text area labeled "Password" directly below, where you are required to entire in a unique password. Two buttons, 'Generate Lorem Ipsum' and 'Encode', enhance your experience. The 'Generate Lorem Ipsum' button fills the text area with sample text, showcasing the encryption process. Click 'Encrypt' to transform your entered text into encrypted Vigenere, displayed in the "Encrypted Text" box beneath. This hands-on feature allows a direct insight into the encryption process. Finally, at the bottom, two practical buttons - 'Decrypt Page' and 'Copy Text' - conclude the page's functionality. The 'Decrypt Page' button transfers the encrypted text to the Vigenere Decryption page, ready for reverse processing. 'Copy Text' conveniently saves the encoded text to your clipboard.</p>
+
+    <!-- Local storage note -->
+    <br>
+
+    <p>
+        <strong>Important Notice Regarding Text Encryption</strong> Any text you choose to encrypt using our service will be stored in your browser's local storage along with associated metadata, including the timestamp of encryption and encryption details such as passwords or the number of rails, depending on the encryption method. This information is stored to enhance user experience and provide seamless service, ensuring your data is kept locally on your device and not on external servers.<br>
+        To find the local storage in your browser, you can generally follow these steps:<br>
+    </p>
+    
+    <ol>
+        <li><strong>Open the Developer Tools:</strong> In browsers like Google Chrome, Firefox, or Microsoft Edge, you can access this by right-clicking on the page and selecting "Inspect" or pressing <kbd>Ctrl+Shift+I</kbd> (or <kbd>Cmd+Opt+I</kbd> on Mac).</li>
+        <li><strong>Navigate to the Application Tab:</strong> In the developer tools, look for a tab labeled "Application" (in Chrome and Edge) or "Storage" (in Firefox).</li>
+        <li><strong>Locate the Local Storage Section:</strong> Find the "Local Storage" section in the Application or Storage tab and click on it to expand.</li>
+        <li><strong>View and Manage Data:</strong> Here, you can view, modify, or delete data stored by websites in your browser's local storage.</li>
+    </ol>
+
+    <p>Remember, the exact steps might vary slightly based on the browser you're using.</p>
+
+    <br>
+
+    <!-- Overview section -->
+    <h3>Overview of Vigenere</h3>
+
+    <br>
+    
+    <!-- Accordion 1 -->
+    <!-- Uses bootstrap -->
+    <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            What is Vigenere?
+        </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>The Vigenère cipher is a method of encrypting alphabetic text through a simple form of polyalphabetic substitution. It uses a keyword, where each letter of the keyword refers to a different Caesar cipher (shift). The strength of the Vigenère cipher comes from its use of multiple different Caesar ciphers in the encryption process, making it more secure than a simple Caesar shift cipher.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            How do you encrypt in Vigenere?
+        </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>To encrypt using the Vigenère cipher, you first choose a keyword. Each letter of the plaintext message is then shifted along the alphabet by a number of places equal to the corresponding letter in the keyword. If the keyword is shorter than the message, the keyword is repeated to match the length of the message. For example, if the keyword is "KEY" and the message is "HELLO", the first letter H is shifted by the alphabet position of K (the first letter of the keyword), the second letter E is shifted by the position of E (the second letter of the keyword), and so on.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What are some resources to learn more?
+        </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>
+            1. <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">en.wikipedia.org</a><br>
+            2. <a href="https://cryptii.com/pipes/vigenere-cipher">cryptii.com</a><br>
+            3. <a href="https://eric.mann.blog/basic-cryptography-the-vigenere-cipher/">eric.mann.blog</a>
+            </p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <br>
+    <br>
+
+    <!-- Encoder section -->
+    <h3>Vigenere Encryptor</h3>
+
+    <br>
+
+    <!-- Input Textarea -->
+    <div class="form-floating">
+        <textarea class="form-control" style="height: 250px;" placeholder="This is where the plain text will go" id="vigenereInputTextarea"></textarea>
+        <label for="vigenereInputTextarea">Plain Text</label>
+    </div>
+
+    <!-- Input Textarea - Password -->
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="This is where the password will go" id="vigenerePasswordInput"></textarea>
+        <label for="vigenerePasswordInput">Password</label>
+    </div>
+
+    <br>
+
+    <!-- Lorem Ipsum button -->
+    <button type="button" id="vigenereLoremIpsum" class="btn btn-secondary">Generate Lorem Ipsum</button>
+
+    <!-- Encode button -->
+    <button type="button" id="vigenereEncodeButton" class="btn btn-outline-secondary">Encrypt</button>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- Output Textarea -->
+    <div class="form-floating">
+        <textarea class="form-control" style="height: 250px;" placeholder="This is where the encrypted text will go" id="vigenereOutputTextarea" disabled></textarea>
+        <label for="vigenereOutputTextarea">Encrypted Text</label>
+    </div>
+
+    <br>
+
+    <!-- Decode Page button -->
+    <button type="button" id="vigenereDecodePageButton" class="btn btn-secondary">Decrypt Page</button>
+
+    <!-- Copy button -->
+    <button type="button" id="vigenereCopyButton" class="btn btn-outline-secondary">Copy Text</button>
+        
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+
+    <!-- Bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- My script -->
+    <script>
+        // Variables that match to various DOM elements
+        const loremButton = document.getElementById('vigenereLoremIpsum')
+        const encodeButton = document.getElementById('vigenereEncodeButton')
+        const decodeButton = document.getElementById('vigenereDecodePageButton')
+        const copyButton = document.getElementById('vigenereCopyButton')
+        const password = document.getElementById('vigenerePasswordInput')
+        const inputText = document.getElementById('vigenereInputTextarea')
+        const outputText = document.getElementById('vigenereOutputTextarea')
+
+        // Function to get the lorem ipsum api request
+        loremButton.addEventListener('click', function() {
+            // Throw an API request
+            fetch('http://18.219.6.249:8080/generate-text?size=3')
+                // Data comes back in JSON format
+                .then(response => response.json())
+                // Set the input text to the retrieved data
+                .then(data => {
+                    inputText.value = data.text
+                })
+                // If there's an error, print it to the console
+                .catch(err => {
+                    console.error('Error fetching Lorem Ipsum: ', err)
+                })
+        })
+
+        // Function to encode the text
+        encodeButton.addEventListener('click', function() {
+            var plainText = inputText.value
+
+            // If the plaintext text is empty
+            if(plainText.trim() === '') {
+                // Send an alert and exit
+                alert('Plain Text cannot be empty!')
+                return
+            }
+
+            var pass = password.value
+
+            // If the password is empty
+            if (pass.trim() === '') {
+                // Send an alert and exit
+                alert('Password cannot be empty!')
+                return
+            }
+
+            // Send confirmation prompt to continue
+            var userConfirmed = confirm("Are you sure you want to encrypt this text? Remember, if you forget your password, you will not be able to decrypt it.")
+            if (!userConfirmed) {
+                return
+            }
+
+            var encodedText = encodeVigenereCipher(plainText, pass) // Calls helper function
+
+            // Set the output text to the encoded text variable
+            outputText.value = encodedText
+            console.log("Updated Encoded Textarea")
+
+            // Save password to local storage (calls the helper function)
+            savePassword(pass, encodedText)
+        })
+
+        // Helper function to save the password to local storage
+        function savePassword(password, encodedText) {
+            // Get the current time
+            var timestamp = new Date().toISOString()
+
+            // Save data into JSON
+            var storageEntry = {
+                password: password,
+                encodedText: encodedText,
+                timestamp: timestamp
+            }
+
+            // Save the JSON into local storage
+            localStorage.setItem("encryptionEntry-" + timestamp, JSON.stringify(storageEntry))
+        }
+
+        // Helper function to encode the text
+        function encodeVigenereCipher(text, password) {
+            const aCharCode = 'A'.charCodeAt(0) // Contains the ASCII value of A
+            let encoded = ''
+            password = password.toUpperCase().replace(/[^A-Z]/g, '') // Makes sure password is only uppercase letters only
+
+            // Iterate over the text; i = plain, j = password
+            for (let i = 0, j = 0; i < text.length; i++) {
+                const currentChar = text[i]
+
+                // Determines the bounds of the upper and lower case letters
+                const isUpperCaseChar = currentChar >= 'A' && currentChar <= 'Z'
+                const isLowerCaseChar = currentChar >= 'a' && currentChar <= 'z'
+
+                // Check if the current letter is an upper or lower case letter
+                if (isUpperCaseChar || isLowerCaseChar) {
+                    const charCodeBase = isUpperCaseChar ? 'A'.charCodeAt(0) : 'a'.charCodeAt(0)
+
+                    // Calculate the offset for encoding using the Vigenere Cipher (plus password character that was calculated)
+                    const offset = (currentChar.charCodeAt(0) - charCodeBase + password[j % password.length].charCodeAt(0) - aCharCode) % 26
+                    
+                    // Add to the result and move to the next character in the password
+                    encoded += String.fromCharCode(offset + charCodeBase)
+                    j++
+                // If the current character is not a letter, add it to the result as is
+                } else {
+                    encoded += currentChar
+                }
+            }
+
+            return encoded
+        }
+
+        // Function to take the encoded text and place it inside of its respective decoder page
+        decodeButton.addEventListener('click', function() {
+            var encodedText = outputText.value
+
+            // If the encoded text is empty
+            if(encodedText.trim() === '') {
+                // Send an alert and exit
+                alert('Encoded Text cannot be empty!')
+            }
+
+            // Save the variable to local storage
+            localStorage.setItem('encodedText', encodedText)
+            localStorage.setItem('password', password.value)
+
+            // Move to the decoder page
+            window.location.href = 'decryption-vigenere.html'
+        })
+
+        // Function to copy text to the clipboard
+        copyButton.addEventListener('click', function() {
+            // Copy to clipboard and change the name of the button to "Copied" for 1 second
+            navigator.clipboard.writeText(outputText.value)
+            .then(() => {
+                copyButton.textContent = 'Copied!'
+                setTimeout(() => {
+                    copyButton.textContent = 'Copy'
+                }, 1000)
+            })
+            // If there's an error, print it to the console
+            .catch(err => {
+                console.error('Error in copying text: ', err)
+            })
+        })
+    </script>
+</body>
+</html>

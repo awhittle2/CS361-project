@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 361 - Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- Nav bar -->
+    <!-- Uses bootstrap -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="encryption.html">Encryption</a>
+                    <a class="nav-link" href="decryption.html">Decryption</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+    <br>
+
+    <!-- Title -->
+    <h1 style="text-align: center;">Encryption Page</h1>
+
+    <br>
+    
+    <!-- Directions -->
+    <h3>How to Use This Page</h3>
+
+    <br>
+
+    <p>Welcome to my detailed guide on the encryption page. At the top, the navbar is your key to navigating the site: 'Home' leads you back to the homepage, while 'Encryption' and 'Decryption' take you to pages dedicated to each topic. Directly below, in the 'Overview of Encryption and Decryption' section, you'll find an interactive accordion menu. This feature provides in-depth answers to fundamental questions like 'What is Encryption?', 'What is Decryption?', and 'Why are Encryption and Decryption Important?', along with a 'Note on Modern Encryption'. Just click on a question to expand the section and reveal valuable insights. Further down, under 'Overview of Encryption Schemes', explore various encryption methods through a similar accordion setup. Click on any scheme, such as 'Base64', to uncover specifics about its application and characteristics. Lastly, at the bottom, four buttons - 'Base64', 'Binary', 'Rail Fence', and 'Vigenere' - serve as direct links to pages that delve deeper into each respective encryption method. Happy exploring!</p>
+
+    <br>
+
+    <!-- Overview section -->
+    <h3>Overview of Encryption and Decryption</h3>
+
+    <br>
+
+    <!-- Accordion 1 -->
+    <!-- Uses bootstrap -->
+    <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            What is Encryption?
+        </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>Encryption is the process of converting plaintext, which is readable and understandable data, into ciphertext, a scrambled and unreadable format. This transformation is done using algorithms and encryption keys, ensuring that the information can only be accessed by those who have the correct key to decrypt it. Encryption is used to protect the confidentiality of digital data stored on computer systems or transmitted via the internet or other computer networks.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            What is Decryption?
+        </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>Decryption is the reverse process of encryption. It involves converting encrypted data (ciphertext) back into its original form (plaintext). This is achieved using a decryption key, which may be the same as or different from the encryption key, depending on the encryption method used. Decryption enables the recipient of the encrypted data to access and interpret the original information securely.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Why are Encryption and Decryption Important?
+        </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>Encryption and decryption are crucial for maintaining data privacy and security in the digital world. They protect sensitive information from unauthorized access, ensuring that data like personal details, financial information, and confidential communications remain private and secure. In a world where data breaches and cyber threats are common, encryption and decryption act as essential tools in securing data against hacking, identity theft, and unauthorized surveillance, thus maintaining the integrity and confidentiality of information.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Note on Modern Encryption
+        </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>While the encryption schemes presented here are fundamental to understanding cryptographic concepts, they are no longer recommended for transmitting sensitive data in modern applications. Modern computing power has made it feasible to crack these methods relatively quickly. For robust and secure encryption, especially for sensitive data, it is advisable to use more advanced cryptographic algorithms. For a strong cryptographic algorithm, please refer to RSA. More information can be found at <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">Wikipedia - RSA (cryptosystem)</a> and the RSA specification at <a href="https://datatracker.ietf.org/doc/html/rfc8017">IETF RFC 8017</a>.</p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <br>
+
+    <!-- Overview section -->
+    <h3>Overview of Encryption Schemes</h3>
+
+    <br>
+
+    <!-- Accordion 2 -->
+    <!-- Uses bootstrap -->
+    <div class="accordion" id="accordionExample2">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2">
+            Base64
+        </button>
+        </h2>
+        <div id="collapseOne2" class="accordion-collapse collapse collapse" data-bs-parent="#accordionExample2">
+        <div class="accordion-body">
+            <p><strong>Summary:</strong> Base64 is an encoding scheme used to represent binary data in an ASCII string format. It's commonly used for encoding data to be transmitted over mediums that only support text, like email.<br>
+            <strong>Pros:</strong> Easy to implement and widely supported.<br>
+            <strong>Cons:</strong> Not suitable for securing sensitive data as it's easily reversible.<br>
+            <strong>Use Cases:</strong> Useful for encoding data like images or files to be included in HTML or CSS files.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+            Binary
+        </button>
+        </h2>
+        <div id="collapseTwo2" class="accordion-collapse collapse" data-bs-parent="#accordionExample2">
+        <div class="accordion-body">
+            <p><strong>Summary:</strong> Binary encoding is the representation of data in a base-2 numeral system. It is not an encryption method but a fundamental data representation format.<br>
+            <strong>Pros:</strong> Universal representation of data, essential for all computing processes.<br>
+            <strong>Cons:</strong> Not an encryption method; does not provide data security.<br>
+            <strong>Use Cases:</strong> Fundamental for all digital communications and computing processes.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
+            Rail Fence
+        </button>
+        </h2>
+        <div id="collapseThree2" class="accordion-collapse collapse" data-bs-parent="#accordionExample2">
+        <div class="accordion-body">
+            <p><strong>Summary:</strong> Rail Fence is a simple transposition cipher that rearranges the characters of the plaintext.<br>
+            <strong>Pros:</strong> Easy to understand and implement.<br>
+            <strong>Cons:</strong> Low security, easily broken with modern computing methods.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour2" aria-expanded="false" aria-controls="collapseFour2">
+            Vigenere
+        </button>
+        </h2>
+        <div id="collapseFour2" class="accordion-collapse collapse" data-bs-parent="#accordionExample2">
+        <div class="accordion-body">
+            <p><strong>Summary:</strong> Vigenere cipher is a method of encrypting alphabetic text through a simple form of polyalphabetic substitution.<br>
+            <strong>Pros:</strong> More secure than simple substitution ciphers.<br>
+            <strong>Cons:</strong> Vulnerable to statistical analysis and can be broken with sufficient ciphertext.</p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- Base64 button -->
+    <a href="encryption-base64.html" class="btn btn-secondary btn-lg">Base64</a>
+
+    <!-- Binary button -->
+    <a href="encryption-binary.html" class="btn btn-secondary btn-lg">Binary</a>
+
+    <!-- Rail Fence button -->
+    <a href="encryption-railfence.html" class="btn btn-secondary btn-lg">Rail Fence</a>
+
+    <!-- Vigenere button -->
+    <a href="encryption-vigenere.html" class="btn btn-secondary btn-lg">Vigenere</a>
+        
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+
+    <!-- Bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
