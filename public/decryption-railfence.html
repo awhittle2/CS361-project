@@ -194,7 +194,7 @@
             localStorage.removeItem('rails')
         })
 
-        // Function to decode the text
+	// Function to decode the text
         decodeButton.addEventListener('click', function() {
             var encodedText = inputText.value
             var numOfRails = parseInt(numRails.value, 10)
@@ -210,25 +210,27 @@
 
             // Set the output text to the decoded text variable
             outputText.value = decodedText
-            console.log("Updated Decoded Textarea")
         })
 
         // Helper function to decode the text
         function decodeRailFenceCipher(text, numOfRails) {
+            if (numOfRails === 1) return text
+
             let rails = Array.from({ length: numOfRails }, () => []); // Initialize an array for each rail
-            
-            // Start at first rail and move down
-            let railIndex = 0
+           
+	    // Start at first rail and move down
+	    let railIndex = 0
             let direction = 1
 
-            // For each character, add it to the current rail
-            for (let char of text) {
-                rails[railIndex].push(char)
+	    // For each character, add it to the current rail
+            for (let i = 0; i < text.length; i++) {
+                rails[railIndex].push(i)
 
-                // Move to next rail
+		// Move to the next rail
                 railIndex += direction
 
-                // Change direction at top/bottom rail
+
+		// Change direction at top/bottom rail
                 if (railIndex === 0 || railIndex === numOfRails - 1) {
                     direction *= -1
                 }
@@ -237,7 +239,7 @@
             let decodedArray = new Array(text.length) // Create an array for the decoded text
             let idx = 0 // Index of original text
 
-            // Iterate over each rail and each indice within the rail
+	    // Iterate over each rail and each indice within the rail
             for (let rail of rails) {
                 for (let i of rail) {
                     decodedArray[i] = text[idx++] // Assign characters to their original positions
